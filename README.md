@@ -1,0 +1,1 @@
+# template-project-python-fastapi
