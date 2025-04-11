@@ -1,0 +1,27 @@
+{
+	"name": "DEV-ENV",
+	"build": {
+		"context": "..",
+		"dockerfile": "../Dockerfile",
+		"target": "dev"  
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python"
+			]
+		}
+	},
+
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"workspaceFolder": "/workspace",
+
+	"remoteUser": "nonroot",
+	"mounts": [
+    	"source=${localWorkspaceFolderBasename}-.venv,target=${containerWorkspaceFolder}/.venv,type=volume"
+	],
+	"postCreateCommand": "[ -f .venv/pyvenv.cfg ] || (sudo chown non-root .venv && uv venv --python 3.11); uv pip install -r requirements.txt"
+}
+
+
