@@ -1,16 +1,22 @@
 {
-	"name": "DEV-ENV",
+	"name": "DEV",
 	"build": {
 		"context": "..",
 		"dockerfile": "../Dockerfile",
 		"target": "dev"  
 	},
-
+	
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-python.python"
-			]
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"ms-azuretools.vscode-docker",
+				"tamasfe.even-better-toml"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			}
 		}
 	},
 
@@ -19,9 +25,14 @@
 
 	"remoteUser": "nonroot",
 	"mounts": [
-    	"source=${localWorkspaceFolderBasename}-.venv,target=${containerWorkspaceFolder}/.venv,type=volume"
+    	"source=${localWorkspaceFolderBasename}--.venv,target=${containerWorkspaceFolder}/.venv,type=volume",
+		"source=${localWorkspaceFolderBasename}--uv-cache,target=/home/nonroot/.cache/uv,type=volume",
+		"source=${localWorkspaceFolderBasename}--pre-commit-cache,target=/home/nonroot/.cache/pre-commit,type=volume"
 	],
-	"postCreateCommand": "[ -f .venv/pyvenv.cfg ] || (sudo chown non-root .venv && uv venv --python 3.11); uv pip install -r requirements.txt"
+	"postCreateCommand": ".devcontainer/setup.sh"
 }
 
-
+//"postCreateCommand": {
+//		"shell": "/bin/bash",
+//		"command": "[ -f .venv/pyvenv.cfg ] || (sudo chown nonroot:nonroot .venv && uv venv); uv pip install -e .[all] && uv run pre-commit install && source .venv/bin/activate"
+//	}

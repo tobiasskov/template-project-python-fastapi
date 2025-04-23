@@ -1,0 +1,63 @@
+
+exclude: ^(.*\.(epw|ddy|json|pkl|xlsx)$|codegen/.*)$
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+        exclude: ^.*\.(jl|h)$
+      - id: end-of-file-fixer
+        exclude: ^.*\.(ts|cpp)$
+      - id: check-added-large-files
+        args: [--maxkb=500]
+      - id: check-toml
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.22
+    hooks:
+      - id: mdformat
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.9
+    hooks:
+      - id: ruff
+        args: [
+          "--fix",                # Attempt to automatically fix violations
+          "--ignore=E741,E722",   # E741: Ambiguous variable names, E722: Bare except
+          "--select=F401,I"       # F401: Unused imports, I: Import sorting
+        ]
+      - id: ruff-format
+        args: [
+          "--line-length=88"  # Match black's default line length
+        ]
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    # uv version.
+    rev: 0.6.5
+    hooks:
+      - id: uv-lock # Making sure the lock file is up to date
+#  - repo: local
+#    hooks:
+#      - id: generate-openapi
+#        name: Generate OpenAPI schema
+#        entry: uv run openapi/generate_openapi.py
+#        language: system
+#        pass_filenames: false
+#        files: ^(src/sd/schemas/.*\.py|openapi/generate_openapi\.py)$
+#      - id: generate-typescript
+#        name: TypeScript Code Generation
+#        entry: bash -c 'cd codegen/typescript && npm run codegen_typescript'
+#        language: system
+#        pass_filenames: false
+#        files: ^(src/sd/schemas/.*\.py|openapi/generate_openapi\.py)$
+#      - id: generate-julia
+#        name: Julia Code Generation
+#        entry: bash -c 'cd codegen/julia && npm run codegen_julia'
+#        language: system
+#        pass_filenames: false
+#        files: ^(src/sd/schemas/.*\.py|openapi/generate_openapi\.py)$
+#      - id: generate-cpp
+#        name: C++ Code Generation
+#        entry: bash -c 'cd codegen/cpp && npm run codegen_cpp'
+#        language: system
+#        pass_filenames: false
+#        files: ^(src/sd/schemas/.*\.py|openapi/generate_openapi\.py)$
+#        exclude: ^codegen/cpp/model/ValidationError_loc_inner\.cpp$
