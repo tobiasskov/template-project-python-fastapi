@@ -62,5 +62,8 @@ RUN groupadd --gid $USER_GID $USERNAME \
 
 COPY --from=builder --chown=nonroot:nonroot /workspace/.venv /workspace/.venv
 
-
 USER $USERNAME
+
+EXPOSE 8080
+
+CMD ["/workspace/.venv/bin/uvicorn", "xyz_api.main:app", "--host", "0.0.0.0", "--port", "8080"]
