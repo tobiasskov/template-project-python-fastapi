@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.0 (2025-04-23)
+
+### Features
+
+- **api**: Added api example
+  ([`0049c78`](https://github.com/tobiasskov/template-project-python-fastapi/commit/0049c78f7c8bf2248f0cb691a7316785f4cb0b57))
+
+
 ## v0.2.1 (2025-04-23)
 
 ### Bug Fixes
