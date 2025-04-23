@@ -7,7 +7,7 @@ packages = ["src/xyz_api"]
 
 [project]
 name = "xyz_api_template"
-version = "0.1.0"
+version = "0.2.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
