@@ -1,5 +1,4 @@
-
-exclude: ^(.*\.(epw|ddy|json|pkl|xlsx)$|codegen/.*)$
+exclude: ^(.*\.(epw|ddy|json|pkl|xlsx)$|codegen/.*|CHANGELOG\.md)$
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0

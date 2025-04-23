@@ -5,3 +5,4 @@ CHANGELOG.md
 __pycache__/
 *.pyc
 .venv/
+.ruff_cache/

@@ -29,7 +29,7 @@
 		"source=${localWorkspaceFolderBasename}--uv-cache,target=/home/nonroot/.cache/uv,type=volume",
 		"source=${localWorkspaceFolderBasename}--pre-commit-cache,target=/home/nonroot/.cache/pre-commit,type=volume"
 	],
-	"postCreateCommand": ".devcontainer/post_create_commands.sh.sh"
+	"postCreateCommand": ".devcontainer/post_create_commands.sh"
 }
 
 //"postCreateCommand": {

@@ -38,8 +38,3 @@ build_command = ""
 upload_to_pypi = false  # Set to true if you want to publish to PyPI
 commit_message = "chore(release): {version}"
 commit_author = "semantic-release-bot <semantic-release-bot@github.com>"
-
-[tool.uv.workspace]
-members = [
-    "test",
-]
