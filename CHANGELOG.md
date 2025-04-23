@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.4.0 (2025-04-23)
+
+### Features
+
+- **deployment**: Including instructions and docker commands for deployment
+  ([`ae69248`](https://github.com/tobiasskov/template-project-python-fastapi/commit/ae69248e251f2c7a75119d606f762b775eb85715))
+
+
 ## v0.3.0 (2025-04-23)
 
 ### Features
