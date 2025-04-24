@@ -2,6 +2,11 @@
 
 This is a template project for a fastapi based Python API.
 
+## Highlights
+
+- Dev container with named volumes for pre-commit + uv caches and venv.
+- Multistage dockerfile with optimized production environment with minimal layers and non-root non-sudo user
+
 ## Deployment
 
 **Build and run api:**
@@ -17,3 +22,5 @@ docker run --publish 8080:8080 "xyz-api"
 
 - Add codegeneration
 - Add property based testing
+- SQLite
+- RestAPI vs graphql
