@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v0.4.1 (2025-04-24)
+
+### Bug Fixes
+
+- Updates to schemas and endpoints
+  ([`439bf63`](https://github.com/tobiasskov/template-project-python-fastapi/commit/439bf6339c4927da4ee6c1927799c6b5fa4e9227))
+
+### Documentation
+
+- **readme**: Update for todo
+  ([`6be7a47`](https://github.com/tobiasskov/template-project-python-fastapi/commit/6be7a47c68b73c9c05dfe0a96114443a112363ea))
+
+
 ## v0.4.0 (2025-04-23)
 
 ### Features
