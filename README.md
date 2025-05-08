@@ -21,6 +21,5 @@ docker run --publish 8080:8080 "xyz-api"
 ## TODO
 
 - Add codegeneration
-- Add property based testing
+- Add property based testing for simulation type logic
 - SQLite
-- RestAPI vs graphql

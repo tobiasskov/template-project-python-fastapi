@@ -1,13 +1,18 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+#[tool.hatch.metadata]
+#allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/xyz_api"]
 
 [project]
 name = "xyz_api_template"
-version = "0.4.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
@@ -16,18 +21,20 @@ dependencies = [
     "fastapi>=0.115.11,<1",
     "uvicorn>=0.34.0,<1",
     ]
+dynamic = ["version"]
 
 [project.optional-dependencies]
 dev = [
     "pre-commit>=4.1.0,<5",
 ]
-deploy = [
-
+test = [
+    "pytest>=8.3.5,<9",
+    "httpx>=0.28.1,<1",
 ]
 
 all = [
     "xyz_api_template[dev]",
-    "xyz_api_template[deploy]",
+    "xyz_api_template[test]",
 ]
 
 # Add semantic release configuration

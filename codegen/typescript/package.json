@@ -1,0 +1,12 @@
+{
+  "name": "typescript_codegen",
+  "scripts": {
+    "codegen_typescript": "openapi-ts"
+  },
+  "dependencies": {
+    "@hey-api/client-fetch": "^0.10.0"
+  },
+  "devDependencies": {
+    "@hey-api/openapi-ts": "^0.67.3"
+  }
+}

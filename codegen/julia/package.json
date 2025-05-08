@@ -1,0 +1,9 @@
+{
+  "name": "julia_codegen",
+  "scripts": {
+    "codegen_julia": "openapi-generator-cli generate -i ../../openapi/openapi.json -g julia-client -o ."
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.20.0"
+  }
+}

@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from xyz_api.database.connection import init_db
 from xyz_api.endpoints.vehicles import v1_router, v2_router
 
 app = FastAPI(
@@ -7,6 +8,14 @@ app = FastAPI(
     description="API for managing vehicles, cars, and trucks",
     version="2.0.0",
 )
+
+
+# Initialize the database on startup
+@app.on_event("startup")
+async def startup_event():
+    """Initialize the database when the application starts."""
+    init_db()
+
 
 # Include both versioned routers
 app.include_router(v1_router)

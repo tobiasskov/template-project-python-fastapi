@@ -1,0 +1,1460 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "System Designer Schemas",
+    "description": "JSON schemas for the System Designer project",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/vehicles": {
+      "get": {
+        "summary": "Get Vehicles V1",
+        "description": "Retrieve a list of vehicles (V1).",
+        "operationId": "get_vehicles_v1_api_v1_vehicles_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/VehicleResponseV1"
+                  },
+                  "type": "array",
+                  "title": "Response Get Vehicles V1 Api V1 Vehicles Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Vehicle V1",
+        "description": "Create a new vehicle (V1).",
+        "operationId": "create_vehicle_v1_api_v1_vehicles_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/CarCreateV1"
+                  },
+                  {
+                    "$ref": "#/components/schemas/TruckCreateV1"
+                  }
+                ],
+                "title": "Vehicle"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehicleResponseV1"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cars": {
+      "get": {
+        "summary": "Get Cars V1",
+        "description": "Retrieve a list of cars (V1).",
+        "operationId": "get_cars_v1_api_v1_cars_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/CarResponseV1"
+                  },
+                  "type": "array",
+                  "title": "Response Get Cars V1 Api V1 Cars Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Car V1",
+        "description": "Create a new car (V1).",
+        "operationId": "create_car_v1_api_v1_cars_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarCreateV1"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CarResponseV1"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/trucks": {
+      "get": {
+        "summary": "Get Trucks V1",
+        "description": "Retrieve a list of trucks (V1).",
+        "operationId": "get_trucks_v1_api_v1_trucks_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/TruckResponseV1"
+                  },
+                  "type": "array",
+                  "title": "Response Get Trucks V1 Api V1 Trucks Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Truck V1",
+        "description": "Create a new truck (V1).",
+        "operationId": "create_truck_v1_api_v1_trucks_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TruckCreateV1"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TruckResponseV1"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/vehicles": {
+      "get": {
+        "summary": "Get Vehicles V2",
+        "description": "Retrieve a list of vehicles (V2).",
+        "operationId": "get_vehicles_v2_api_v2_vehicles_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/VehicleResponseV2"
+                  },
+                  "type": "array",
+                  "title": "Response Get Vehicles V2 Api V2 Vehicles Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Vehicle V2",
+        "description": "Create a new vehicle (V2).",
+        "operationId": "create_vehicle_v2_api_v2_vehicles_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/CarCreateV2"
+                  },
+                  {
+                    "$ref": "#/components/schemas/TruckCreateV2"
+                  }
+                ],
+                "title": "Vehicle"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehicleResponseV2"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/cars": {
+      "get": {
+        "summary": "Get Cars V2",
+        "description": "Retrieve a list of cars (V2).",
+        "operationId": "get_cars_v2_api_v2_cars_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/CarResponseV2"
+                  },
+                  "type": "array",
+                  "title": "Response Get Cars V2 Api V2 Cars Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Car V2",
+        "description": "Create a new car (V2).",
+        "operationId": "create_car_v2_api_v2_cars_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarCreateV2"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CarResponseV2"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/trucks": {
+      "get": {
+        "summary": "Get Trucks V2",
+        "description": "Retrieve a list of trucks (V2).",
+        "operationId": "get_trucks_v2_api_v2_trucks_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/TruckResponseV2"
+                  },
+                  "type": "array",
+                  "title": "Response Get Trucks V2 Api V2 Trucks Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Truck V2",
+        "description": "Create a new truck (V2).",
+        "operationId": "create_truck_v2_api_v2_trucks_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TruckCreateV2"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TruckResponseV2"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CarCreateV1": {
+        "properties": {
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make of the vehicle"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model of the vehicle"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year",
+            "description": "Year of manufacture"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color",
+            "description": "Color of the vehicle"
+          },
+          "vin": {
+            "type": "string",
+            "maxLength": 17,
+            "minLength": 17,
+            "title": "Vin",
+            "description": "Vehicle Identification Number (VIN)"
+          },
+          "mileage": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Mileage",
+            "description": "Current mileage of the vehicle"
+          },
+          "last_service_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Service Date",
+            "description": "Date of last service"
+          },
+          "doors": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 2.0,
+            "title": "Doors",
+            "description": "Number of doors"
+          },
+          "trunk_capacity": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Trunk Capacity",
+            "description": "Trunk capacity in cubic feet"
+          },
+          "fuel_type": {
+            "$ref": "#/components/schemas/FuelType",
+            "description": "Type of fuel used"
+          },
+          "transmission": {
+            "$ref": "#/components/schemas/TransmissionType",
+            "description": "Type of transmission"
+          }
+        },
+        "type": "object",
+        "required": [
+          "make",
+          "model",
+          "year",
+          "color",
+          "vin",
+          "mileage",
+          "doors",
+          "trunk_capacity",
+          "fuel_type",
+          "transmission"
+        ],
+        "title": "CarCreateV1",
+        "description": "Schema for creating a car (V1)."
+      },
+      "CarCreateV2": {
+        "properties": {
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make of the vehicle"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model of the vehicle"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year",
+            "description": "Year of manufacture"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color",
+            "description": "Color of the vehicle"
+          },
+          "vin": {
+            "type": "string",
+            "maxLength": 17,
+            "minLength": 17,
+            "title": "Vin",
+            "description": "Vehicle Identification Number (VIN)"
+          },
+          "registration_number": {
+            "type": "string",
+            "title": "Registration Number",
+            "description": "Vehicle registration number"
+          },
+          "insurance_expiry": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Insurance Expiry",
+            "description": "Insurance expiry date"
+          },
+          "is_available": {
+            "type": "boolean",
+            "title": "Is Available",
+            "description": "Whether the vehicle is available for use",
+            "default": true
+          },
+          "doors": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 2.0,
+            "title": "Doors",
+            "description": "Number of doors"
+          },
+          "trunk_capacity": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Trunk Capacity",
+            "description": "Trunk capacity in cubic feet"
+          },
+          "fuel_type": {
+            "$ref": "#/components/schemas/FuelType",
+            "description": "Type of fuel used"
+          },
+          "transmission": {
+            "$ref": "#/components/schemas/TransmissionType",
+            "description": "Type of transmission"
+          },
+          "sunroof": {
+            "type": "boolean",
+            "title": "Sunroof",
+            "description": "Whether the car has a sunroof",
+            "default": false
+          },
+          "parking_sensors": {
+            "type": "boolean",
+            "title": "Parking Sensors",
+            "description": "Whether the car has parking sensors",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "make",
+          "model",
+          "year",
+          "color",
+          "vin",
+          "registration_number",
+          "doors",
+          "trunk_capacity",
+          "fuel_type",
+          "transmission"
+        ],
+        "title": "CarCreateV2",
+        "description": "Schema for creating a car (V2)."
+      },
+      "CarResponseV1": {
+        "properties": {
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make of the vehicle"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model of the vehicle"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year",
+            "description": "Year of manufacture"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color",
+            "description": "Color of the vehicle"
+          },
+          "vin": {
+            "type": "string",
+            "maxLength": 17,
+            "minLength": 17,
+            "title": "Vin",
+            "description": "Vehicle Identification Number (VIN)"
+          },
+          "mileage": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Mileage",
+            "description": "Current mileage of the vehicle"
+          },
+          "last_service_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Service Date",
+            "description": "Date of last service"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the vehicle"
+          },
+          "doors": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 2.0,
+            "title": "Doors",
+            "description": "Number of doors"
+          },
+          "trunk_capacity": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Trunk Capacity",
+            "description": "Trunk capacity in cubic feet"
+          },
+          "fuel_type": {
+            "$ref": "#/components/schemas/FuelType",
+            "description": "Type of fuel used"
+          },
+          "transmission": {
+            "$ref": "#/components/schemas/TransmissionType",
+            "description": "Type of transmission"
+          }
+        },
+        "type": "object",
+        "required": [
+          "make",
+          "model",
+          "year",
+          "color",
+          "vin",
+          "mileage",
+          "id",
+          "doors",
+          "trunk_capacity",
+          "fuel_type",
+          "transmission"
+        ],
+        "title": "CarResponseV1",
+        "description": "Schema for car responses, including ID (V1)."
+      },
+      "CarResponseV2": {
+        "properties": {
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make of the vehicle"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model of the vehicle"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year",
+            "description": "Year of manufacture"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color",
+            "description": "Color of the vehicle"
+          },
+          "vin": {
+            "type": "string",
+            "maxLength": 17,
+            "minLength": 17,
+            "title": "Vin",
+            "description": "Vehicle Identification Number (VIN)"
+          },
+          "registration_number": {
+            "type": "string",
+            "title": "Registration Number",
+            "description": "Vehicle registration number"
+          },
+          "insurance_expiry": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Insurance Expiry",
+            "description": "Insurance expiry date"
+          },
+          "is_available": {
+            "type": "boolean",
+            "title": "Is Available",
+            "description": "Whether the vehicle is available for use",
+            "default": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the vehicle"
+          },
+          "mileage": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Mileage",
+            "description": "Current mileage of the vehicle"
+          },
+          "last_service_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Service Date",
+            "description": "Date of last service"
+          },
+          "doors": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 2.0,
+            "title": "Doors",
+            "description": "Number of doors"
+          },
+          "trunk_capacity": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Trunk Capacity",
+            "description": "Trunk capacity in cubic feet"
+          },
+          "fuel_type": {
+            "$ref": "#/components/schemas/FuelType",
+            "description": "Type of fuel used"
+          },
+          "transmission": {
+            "$ref": "#/components/schemas/TransmissionType",
+            "description": "Type of transmission"
+          },
+          "sunroof": {
+            "type": "boolean",
+            "title": "Sunroof",
+            "description": "Whether the car has a sunroof",
+            "default": false
+          },
+          "parking_sensors": {
+            "type": "boolean",
+            "title": "Parking Sensors",
+            "description": "Whether the car has parking sensors",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "make",
+          "model",
+          "year",
+          "color",
+          "vin",
+          "registration_number",
+          "id",
+          "mileage",
+          "doors",
+          "trunk_capacity",
+          "fuel_type",
+          "transmission"
+        ],
+        "title": "CarResponseV2",
+        "description": "Schema for car responses, including ID (V2)."
+      },
+      "FuelType": {
+        "type": "string",
+        "enum": [
+          "gasoline",
+          "diesel",
+          "electric",
+          "hybrid"
+        ],
+        "title": "FuelType"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "TransmissionType": {
+        "type": "string",
+        "enum": [
+          "manual",
+          "automatic",
+          "cvt"
+        ],
+        "title": "TransmissionType"
+      },
+      "TruckCreateV1": {
+        "properties": {
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make of the vehicle"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model of the vehicle"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year",
+            "description": "Year of manufacture"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color",
+            "description": "Color of the vehicle"
+          },
+          "vin": {
+            "type": "string",
+            "maxLength": 17,
+            "minLength": 17,
+            "title": "Vin",
+            "description": "Vehicle Identification Number (VIN)"
+          },
+          "mileage": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Mileage",
+            "description": "Current mileage of the vehicle"
+          },
+          "last_service_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Service Date",
+            "description": "Date of last service"
+          },
+          "bed_length": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Bed Length",
+            "description": "Length of the truck bed in feet"
+          },
+          "towing_capacity": {
+            "type": "number",
+            "maximum": 100000.0,
+            "minimum": 0.0,
+            "title": "Towing Capacity",
+            "description": "Towing capacity in pounds"
+          },
+          "payload_capacity": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Payload Capacity",
+            "description": "Maximum payload capacity in pounds"
+          },
+          "engine_size": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Engine Size",
+            "description": "Engine size in liters"
+          }
+        },
+        "type": "object",
+        "required": [
+          "make",
+          "model",
+          "year",
+          "color",
+          "vin",
+          "mileage",
+          "bed_length",
+          "towing_capacity",
+          "payload_capacity",
+          "engine_size"
+        ],
+        "title": "TruckCreateV1",
+        "description": "Schema for creating a truck (V1)."
+      },
+      "TruckCreateV2": {
+        "properties": {
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make of the vehicle"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model of the vehicle"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year",
+            "description": "Year of manufacture"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color",
+            "description": "Color of the vehicle"
+          },
+          "vin": {
+            "type": "string",
+            "maxLength": 17,
+            "minLength": 17,
+            "title": "Vin",
+            "description": "Vehicle Identification Number (VIN)"
+          },
+          "registration_number": {
+            "type": "string",
+            "title": "Registration Number",
+            "description": "Vehicle registration number"
+          },
+          "insurance_expiry": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Insurance Expiry",
+            "description": "Insurance expiry date"
+          },
+          "is_available": {
+            "type": "boolean",
+            "title": "Is Available",
+            "description": "Whether the vehicle is available for use",
+            "default": true
+          },
+          "bed_length": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Bed Length",
+            "description": "Length of the truck bed in feet"
+          },
+          "towing_capacity": {
+            "type": "number",
+            "maximum": 100000.0,
+            "minimum": 0.0,
+            "title": "Towing Capacity",
+            "description": "Towing capacity in pounds"
+          },
+          "payload_capacity": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Payload Capacity",
+            "description": "Maximum payload capacity in pounds"
+          },
+          "engine_size": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Engine Size",
+            "description": "Engine size in liters"
+          },
+          "four_wheel_drive": {
+            "type": "boolean",
+            "title": "Four Wheel Drive",
+            "description": "Whether the truck has four-wheel drive",
+            "default": false
+          },
+          "bed_liner": {
+            "type": "boolean",
+            "title": "Bed Liner",
+            "description": "Whether the truck has a bed liner",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "make",
+          "model",
+          "year",
+          "color",
+          "vin",
+          "registration_number",
+          "bed_length",
+          "towing_capacity",
+          "payload_capacity",
+          "engine_size"
+        ],
+        "title": "TruckCreateV2",
+        "description": "Schema for creating a truck (V2)."
+      },
+      "TruckResponseV1": {
+        "properties": {
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make of the vehicle"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model of the vehicle"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year",
+            "description": "Year of manufacture"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color",
+            "description": "Color of the vehicle"
+          },
+          "vin": {
+            "type": "string",
+            "maxLength": 17,
+            "minLength": 17,
+            "title": "Vin",
+            "description": "Vehicle Identification Number (VIN)"
+          },
+          "mileage": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Mileage",
+            "description": "Current mileage of the vehicle"
+          },
+          "last_service_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Service Date",
+            "description": "Date of last service"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the vehicle"
+          },
+          "bed_length": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Bed Length",
+            "description": "Length of the truck bed in feet"
+          },
+          "towing_capacity": {
+            "type": "number",
+            "maximum": 100000.0,
+            "minimum": 0.0,
+            "title": "Towing Capacity",
+            "description": "Towing capacity in pounds"
+          },
+          "payload_capacity": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Payload Capacity",
+            "description": "Maximum payload capacity in pounds"
+          },
+          "engine_size": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Engine Size",
+            "description": "Engine size in liters"
+          }
+        },
+        "type": "object",
+        "required": [
+          "make",
+          "model",
+          "year",
+          "color",
+          "vin",
+          "mileage",
+          "id",
+          "bed_length",
+          "towing_capacity",
+          "payload_capacity",
+          "engine_size"
+        ],
+        "title": "TruckResponseV1",
+        "description": "Schema for truck responses, including ID (V1)."
+      },
+      "TruckResponseV2": {
+        "properties": {
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make of the vehicle"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model of the vehicle"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year",
+            "description": "Year of manufacture"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color",
+            "description": "Color of the vehicle"
+          },
+          "vin": {
+            "type": "string",
+            "maxLength": 17,
+            "minLength": 17,
+            "title": "Vin",
+            "description": "Vehicle Identification Number (VIN)"
+          },
+          "registration_number": {
+            "type": "string",
+            "title": "Registration Number",
+            "description": "Vehicle registration number"
+          },
+          "insurance_expiry": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Insurance Expiry",
+            "description": "Insurance expiry date"
+          },
+          "is_available": {
+            "type": "boolean",
+            "title": "Is Available",
+            "description": "Whether the vehicle is available for use",
+            "default": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the vehicle"
+          },
+          "mileage": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Mileage",
+            "description": "Current mileage of the vehicle"
+          },
+          "last_service_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Service Date",
+            "description": "Date of last service"
+          },
+          "bed_length": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Bed Length",
+            "description": "Length of the truck bed in feet"
+          },
+          "towing_capacity": {
+            "type": "number",
+            "maximum": 100000.0,
+            "minimum": 0.0,
+            "title": "Towing Capacity",
+            "description": "Towing capacity in pounds"
+          },
+          "payload_capacity": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Payload Capacity",
+            "description": "Maximum payload capacity in pounds"
+          },
+          "engine_size": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Engine Size",
+            "description": "Engine size in liters"
+          },
+          "four_wheel_drive": {
+            "type": "boolean",
+            "title": "Four Wheel Drive",
+            "description": "Whether the truck has four-wheel drive",
+            "default": false
+          },
+          "bed_liner": {
+            "type": "boolean",
+            "title": "Bed Liner",
+            "description": "Whether the truck has a bed liner",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "make",
+          "model",
+          "year",
+          "color",
+          "vin",
+          "registration_number",
+          "id",
+          "mileage",
+          "bed_length",
+          "towing_capacity",
+          "payload_capacity",
+          "engine_size"
+        ],
+        "title": "TruckResponseV2",
+        "description": "Schema for truck responses, including ID (V2)."
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VehicleResponseV1": {
+        "properties": {
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make of the vehicle"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model of the vehicle"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year",
+            "description": "Year of manufacture"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color",
+            "description": "Color of the vehicle"
+          },
+          "vin": {
+            "type": "string",
+            "maxLength": 17,
+            "minLength": 17,
+            "title": "Vin",
+            "description": "Vehicle Identification Number (VIN)"
+          },
+          "mileage": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Mileage",
+            "description": "Current mileage of the vehicle"
+          },
+          "last_service_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Service Date",
+            "description": "Date of last service"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the vehicle"
+          }
+        },
+        "type": "object",
+        "required": [
+          "make",
+          "model",
+          "year",
+          "color",
+          "vin",
+          "mileage",
+          "id"
+        ],
+        "title": "VehicleResponseV1",
+        "description": "Base response schema including ID (V1)."
+      },
+      "VehicleResponseV2": {
+        "properties": {
+          "make": {
+            "type": "string",
+            "title": "Make",
+            "description": "Make of the vehicle"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "Model of the vehicle"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year",
+            "description": "Year of manufacture"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color",
+            "description": "Color of the vehicle"
+          },
+          "vin": {
+            "type": "string",
+            "maxLength": 17,
+            "minLength": 17,
+            "title": "Vin",
+            "description": "Vehicle Identification Number (VIN)"
+          },
+          "registration_number": {
+            "type": "string",
+            "title": "Registration Number",
+            "description": "Vehicle registration number"
+          },
+          "insurance_expiry": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Insurance Expiry",
+            "description": "Insurance expiry date"
+          },
+          "is_available": {
+            "type": "boolean",
+            "title": "Is Available",
+            "description": "Whether the vehicle is available for use",
+            "default": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the vehicle"
+          },
+          "mileage": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Mileage",
+            "description": "Current mileage of the vehicle"
+          },
+          "last_service_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Service Date",
+            "description": "Date of last service"
+          }
+        },
+        "type": "object",
+        "required": [
+          "make",
+          "model",
+          "year",
+          "color",
+          "vin",
+          "registration_number",
+          "id",
+          "mileage"
+        ],
+        "title": "VehicleResponseV2",
+        "description": "Base response schema including ID (V2)."
+      }
+    }
+  }
+}

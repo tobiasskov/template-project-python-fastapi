@@ -172,3 +172,24 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+##### Code generation #####
+
+codegen/typescript/node_modules/
+
+codegen/julia/node_modules/
+codegen/julia/.openapi-generator/
+codegen/julia/docs/
+codegen/julia/.openapi-generator-ignore
+codegen/julia/README.md
+codegen/julia/openapitools.json
+
+codegen/cpp/node_modules/
+codegen/cpp/.openapi-generator/
+codegen/cpp/.openapi-generator-ignore
+codegen/cpp/README.md
+codegen/cpp/openapitools.json
+codegen/cpp/api/
+codegen/cpp/impl/
+codegen/cpp/main-api-server.cpp

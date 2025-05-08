@@ -1,0 +1,9 @@
+{
+  "name": "cpp_codegen",
+  "scripts": {
+    "codegen_cpp": "openapi-generator-cli generate -i ../../openapi/openapi.json -g cpp-pistache-server -o ."
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.20.0"
+  }
+}

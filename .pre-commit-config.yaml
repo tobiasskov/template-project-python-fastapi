@@ -33,30 +33,25 @@ repos:
     rev: 0.6.5
     hooks:
       - id: uv-lock # Making sure the lock file is up to date
-#  - repo: local
-#    hooks:
-#      - id: generate-openapi
-#        name: Generate OpenAPI schema
-#        entry: uv run openapi/generate_openapi.py
-#        language: system
-#        pass_filenames: false
-#        files: ^(src/sd/schemas/.*\.py|openapi/generate_openapi\.py)$
-#      - id: generate-typescript
-#        name: TypeScript Code Generation
-#        entry: bash -c 'cd codegen/typescript && npm run codegen_typescript'
-#        language: system
-#        pass_filenames: false
-#        files: ^(src/sd/schemas/.*\.py|openapi/generate_openapi\.py)$
-#      - id: generate-julia
-#        name: Julia Code Generation
-#        entry: bash -c 'cd codegen/julia && npm run codegen_julia'
-#        language: system
-#        pass_filenames: false
-#        files: ^(src/sd/schemas/.*\.py|openapi/generate_openapi\.py)$
-#      - id: generate-cpp
-#        name: C++ Code Generation
-#        entry: bash -c 'cd codegen/cpp && npm run codegen_cpp'
-#        language: system
-#        pass_filenames: false
-#        files: ^(src/sd/schemas/.*\.py|openapi/generate_openapi\.py)$
-#        exclude: ^codegen/cpp/model/ValidationError_loc_inner\.cpp$
+  - repo: local
+    hooks:
+      - id: generate-openapi
+        name: Generate OpenAPI schema
+        entry: uv run openapi/generate_openapi_schema.py
+        language: system
+        pass_filenames: false
+      - id: generate-typescript
+        name: TypeScript Code Generation
+        entry: bash -c 'cd codegen/typescript && npm run codegen_typescript'
+        language: system
+        pass_filenames: false
+      - id: generate-julia
+        name: Julia Code Generation
+        entry: bash -c 'cd codegen/julia && npm run codegen_julia'
+        language: system
+        pass_filenames: false
+      - id: generate-cpp
+        name: C++ Code Generation
+        entry: bash -c 'cd codegen/cpp && npm run codegen_cpp'
+        language: system
+        pass_filenames: false

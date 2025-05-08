@@ -18,9 +18,23 @@ RUN groupadd --gid $USER_GID $USERNAME \
     #
     # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
     && apt-get update \
-    && apt-get install -y sudo git \
+    && apt-get install -y sudo git curl \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
+
+USER $USERNAME
+
+# Installing node for codegeneration
+# https://stackoverflow.com/questions/36399848/install-node-in-dockerfile
+# https://github.com/nvm-sh/nvm
+ENV NODE_VERSION=24.0.0
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+ENV NVM_DIR=/home/nonroot/.nvm
+RUN sudo bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION"
+
+# Installing Java for cpp and Julia codegeneration:
+# https://wiki.debian.org/Java
+RUN sudo apt-get install -y default-jre
 
 #####################################################################################################
 ##### Build stage (virtualenv)
