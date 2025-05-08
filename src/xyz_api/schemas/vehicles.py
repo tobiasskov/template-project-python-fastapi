@@ -25,7 +25,7 @@ class VehicleBaseV1(BaseModel):
 
     make: str = Field(description="Make of the vehicle")
     model: str = Field(description="Model of the vehicle")
-    year: int = Field(description="Year of manufacture")
+    year: int = Field(ge=1950, le=2025, description="Year of manufacture")
     color: str = Field(description="Color of the vehicle")
     vin: str = Field(
         min_length=17, max_length=17, description="Vehicle Identification Number (VIN)"

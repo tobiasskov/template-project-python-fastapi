@@ -91,6 +91,10 @@ function OpenAPI.validate_property(::Type{ TruckResponseV1 }, name::Symbol, val)
 
 
 
+    if name === Symbol("year")
+        OpenAPI.validate_param(name, "TruckResponseV1", :maximum, val, 2025, false)
+        OpenAPI.validate_param(name, "TruckResponseV1", :minimum, val, 1950, false)
+    end
 
 
     if name === Symbol("vin")

@@ -399,6 +399,8 @@
           },
           "year": {
             "type": "integer",
+            "maximum": 2025.0,
+            "minimum": 1950.0,
             "title": "Year",
             "description": "Year of manufacture"
           },
@@ -590,6 +592,8 @@
           },
           "year": {
             "type": "integer",
+            "maximum": 2025.0,
+            "minimum": 1950.0,
             "title": "Year",
             "description": "Year of manufacture"
           },
@@ -847,6 +851,8 @@
           },
           "year": {
             "type": "integer",
+            "maximum": 2025.0,
+            "minimum": 1950.0,
             "title": "Year",
             "description": "Year of manufacture"
           },
@@ -1044,6 +1050,8 @@
           },
           "year": {
             "type": "integer",
+            "maximum": 2025.0,
+            "minimum": 1950.0,
             "title": "Year",
             "description": "Year of manufacture"
           },
@@ -1308,6 +1316,8 @@
           },
           "year": {
             "type": "integer",
+            "maximum": 2025.0,
+            "minimum": 1950.0,
             "title": "Year",
             "description": "Year of manufacture"
           },

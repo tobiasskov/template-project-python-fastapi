@@ -29,6 +29,8 @@ dev = [
 ]
 test = [
     "pytest>=8.3.5,<9",
+    "pytest-xdist>=3.6.1,<4",
+    "polyfactory>=2.21.0,<3",
     "httpx>=0.28.1,<1",
 ]
 

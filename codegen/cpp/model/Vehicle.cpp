@@ -56,7 +56,26 @@ bool Vehicle::validate(std::stringstream& msg, const std::string& pathPrefix) co
     bool success = true;
     const std::string _pathPrefix = pathPrefix.empty() ? "Vehicle" : pathPrefix;
 
-                         
+                 
+    
+    /* Year */ {
+        const int32_t& value = m_Year;
+        const std::string currentValuePath = _pathPrefix + ".year";
+                
+        
+        if (value < 1950)
+        {
+            success = false;
+            msg << currentValuePath << ": must be greater than or equal to 1950;";
+        }
+        if (value > 2025)
+        {
+            success = false;
+            msg << currentValuePath << ": must be less than or equal to 2025;";
+        }
+
+    }
+             
     
     /* Vin */ {
         const std::string& value = m_Vin;
