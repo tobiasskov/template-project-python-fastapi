@@ -1,9 +1,15 @@
 # CHANGELOG
 
 
+## v0.4.2 (2025-05-08)
+
+
 ## v0.4.1 (2025-04-24)
 
 ### Bug Fixes
+
+- Codegeneration for cpp, julia and typescript
+  ([`77faa70`](https://github.com/tobiasskov/template-project-python-fastapi/commit/77faa700b3a1e4b8394fdb6ab4fc50025af35a8a))
 
 - Updates to schemas and endpoints
   ([`439bf63`](https://github.com/tobiasskov/template-project-python-fastapi/commit/439bf6339c4927da4ee6c1927799c6b5fa4e9227))
