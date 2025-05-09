@@ -193,3 +193,5 @@ codegen/cpp/openapitools.json
 codegen/cpp/api/
 codegen/cpp/impl/
 codegen/cpp/main-api-server.cpp
+
+test_results/

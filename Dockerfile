@@ -59,6 +59,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 ADD . /workspace
 
+ENV SETUPTOOLS_SCM_PRETEND_VERSION=0.0.0
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked --no-editable
 

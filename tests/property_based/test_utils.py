@@ -1,6 +1,16 @@
+import os
+import traceback
 from datetime import datetime
 from pathlib import Path
 from typing import Callable
+
+import pytest
+from pydantic import BaseModel
+
+
+@pytest.fixture(scope="session")
+def test_session_timestamp():
+    return datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
 
 
 def save_test_input_and_output(
@@ -13,38 +23,30 @@ def save_test_input_and_output(
 ):
     parent_output_folder = Path(__file__).parent.joinpath("test_results")
     run_output_folder = parent_output_folder.joinpath(
-        f"{file_name}___{function_name}___{timestamp}"
+        f"[file]{file_name}[function]{function_name}[time]{timestamp}"
     )
-    test_output_folder = run_output_folder.joinpath(f"test_run_id_{test_run_id}")
+    test_output_folder = run_output_folder.joinpath(f"[id]{test_run_id}")
     if not os.path.isdir(test_output_folder):
         os.makedirs(test_output_folder)
 
     # Always save the input schema:
-    with open(pydantic_model_save_name, "w") as outfile:
-        outfile.write(input_schema.model_dump_json())
+    with open(test_output_folder.joinpath("input_schema.json"), "w") as outfile:
+        outfile.write(input_schema.model_dump_json(indent=2))
 
     try:
         # Act: Call the function you want to test
         func_output = func(input_schema)
+
+        with open(test_output_folder.joinpath("output.out"), "w") as outfile:
+            outfile.write(f"{func_output}")
+
         return func_output
 
     except Exception as error:
-        now = datetime.now()
-        current_time = now.strftime("%Y_%m_%d__%H_%M_%S")
+        with open(test_output_folder.joinpath("error.err"), "w") as outfile:
+            outfile.writelines(traceback.format_exception(error))
 
-        if not os.path.isdir(output_folder):
-            os.makedirs(output_folder)
-
-        # Save input pydantic model as json:
-        pydantic_model_save_name = output_folder.joinpath(
-            f"{current_time}__{filepath.stem}__{func.__name__}__id_{test_run_id}__input.pkl"
-        )
-
-        # Save error message:
-        error_message_save_name = output_folder.joinpath(
-            f"{current_time}__{filepath.stem}__{func.__name__}__id_{test_run_id}__error.err"
-        )
-        with open(error_message_save_name, "w") as outfile:
+        with open(run_output_folder.joinpath(f"[id]{test_run_id}.err"), "w") as outfile:
             outfile.writelines(traceback.format_exception(error))
 
         raise Exception(error)

@@ -20,5 +20,4 @@ docker run --publish 8080:8080 "xyz-api"
 
 ## TODO
 
-- Add property based testing for simulation type logic
 - SQLite
