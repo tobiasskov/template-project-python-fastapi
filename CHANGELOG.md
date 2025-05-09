@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.5.0 (2025-05-09)
+
+### Features
+
+- Property based testing
+  ([`ea0277f`](https://github.com/tobiasskov/template-project-python-fastapi/commit/ea0277f481f20bb9ada0a62a0f63f72bfb0c01f4))
+
+
 ## v0.4.2 (2025-05-08)
 
 
